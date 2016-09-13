@@ -1,0 +1,34 @@
+Title: Pokemon Duke Blue
+Author: Robert Steilberg | rhs16
+Genre: Role-playing game / turn-based strategy
+
+Pokemon Duke Blue is the newest release to the Pokemon video game franchise.
+You begin as a lowly freshman, armed only with your trusty Charizard
+as you try to battle your way to the Pokemon championship. Your goal:
+become the Pokemon master of Duke University by catching 'em all and defeating any
+enemies that stand in your path. Only after defeating a most formidable opponent
+will you finally be able to claim the title of Duke University's Pokemon Master!
+
+Controls:
+	Up/down/right/left arrow keys: move your sprite throughout the map, or
+	choose which moves you'll use in battle
+	Z: equivalent to the "A" button on a GameBoy (affirmative/attack command)
+	
+Goal:
+	Defeat all your enemies using your battling skills and become Duke University's
+	Pokemon master! You'll do this by getting tips from fellow students and ultimately
+	challenging the reigning Pokemon master.
+	
+General world mode:
+	You navigate through Duke University's East Campus, interacting with dorm leaders
+	and working your way up to Baldwin Auditorium, which will be the scene of your
+	ultimate battle. Press Z to talk to an NPC. You will ultimately challenge Duke's
+	incumbent Pokemon master--COACH K!
+	
+Battle mode:
+	Each opponent begins with a set amount of HP according to their Pokemon's strength.
+	Pressing the Z key repeatedly deals damage to your opponent's Pokemon, but wait too
+	long, and your opponent will defeat you first. Attacks are dealt to your Pokemon
+	on a timely basis. Your Pokemon's HP will decline as your opponent's Pokemon attacks,
+	so you must attack your opponent's Pokemon as quickly as possible to prevent that from
+	happening.
