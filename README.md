@@ -9,6 +9,7 @@ Controls:
 * Z: equivalent to the "A" button on a GameBoy (affirmative/attack command)
 * Space: begins the overworld mode from the title screen
 * C: displays the cheat mode screen which lists all cheat codes and their effects
+* B: skips directly from the intro screen to the battle mode
 * I: toggles invincibility when in battle mode
 	
 
