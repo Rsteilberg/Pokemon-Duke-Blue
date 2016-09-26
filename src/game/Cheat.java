@@ -1,4 +1,4 @@
-package game_rhs16;
+package game;
 
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -33,8 +33,10 @@ public class Cheat {
 	/**
 	 * Initialize cheat stage and gameplay
 	 * 
-	 * @param width the width of the window
-	 * @param height the height of the window
+	 * @param width
+	 *            the width of the window
+	 * @param height
+	 *            the height of the window
 	 * @return the scene
 	 */
 	public Scene init(int width, int height) {

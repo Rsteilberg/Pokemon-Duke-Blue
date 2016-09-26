@@ -1,70 +1,26 @@
-CompSci 308: JavaFX Game README.md
-======================
+Pokémon Duke Blue
+=================
 
-Robert Steilberg | rhs16
+Pokémon Duke Blue is a role-playing, turn based game built with JavaFX based off of the Pokémon videogame series. The game features a navigable world, interactive non-player characters, turn-style Pokémon battles, cheat codes, and sound effects.
 
+Controls:
+-------------
+* Up/down/right/left arrow keys: move the player sprite throughout the map, or choose which moves you'll use in battle
+* Z: equivalent to the "A" button on a GameBoy (affirmative/attack command)
+* Space: begins the overworld mode from the title screen
+* C: displays the cheat mode screen which lists all cheat codes and their effects
+* I: toggles invincibility when in battle mode
+	
+
+Goal
+------
+Talk to non-player characters and get advice on how to become a Pokémon master, then challenge Coach K, Duke University's incumbent Pokémon master.
+	
+General world mode
 ----------------------------
+Navigate through Duke University's East Campus and interact with dorm leaders via the Z key.
 
-Names of contributors
 
-* Robert Steilberg
-
-Date started:
-
-* 5 September 2016
-
-Date finished:
-
-* 12 September 2016
-
-Hours spent working on project:
-
-* Approximately 24 hours
-
-Individual roles:
-
-* I had full responsibility for this entire project.
-
-Resources:
-
-* TAs Eric, Karen, Arjun, Daniel
-* Oracle Java documentation
-* http://docs.oracle.com/javafx/2/get_started/jfxpub-get_started.htm
-* http://www.oracle.com/technetwork/java/javase/overview/javafx-overview-2158620.html
-* https://carlfx.wordpress.com/2012/03/29/javafx-2-gametutorial-part-1/ : Parts 1 through 4 
-* http://stackoverflow.com/questions/23202272/how-to-play-sounds-with-javafx
-
-Files used to start the project:
-
-* The example files given in class
-
-Files used to test project:
-
-* None
-
-Data or resource files:
-
-* Images for the project are located in the images folder and are in PNG or JPG format
-* Sounds for the project are located in the music folder and are in the MP3 format
-
-Pertinent information:
-
-* The arrow keys control the player
-* The Z key is used to engage non-player-characters (NPCs) or attack during battles
-* The C key, when pressed during the menu scene, brings up a list of cheats
-* The B key, when pressed during the menu scene, takes the player directly to battle
-* The I key, when pressed during battle, toggles invincibility for the user's Pokemon
-
-Known bugs:
-
-* Due to the timing step function that I use to call opponent attacks, I was unable to remove the POW image from the scene on GAME OVER when the player loses
-* During the battle mode, quick attacks made on the opponent's Pokemon will cause the game to lag due to the time required to process sound effects for battle attacks
-* A warning is generated every time a sound is played. This is normal and is not indicative of any exception to the regular program flow of the game.
-
-Extra features:
-
-* Sound effects and background music, obstructed sprite movement
-
-Impression:
-
-* This assignment was a great introduction to JavaFX and the class in general. I really enjoyed coding my first game and feel like I could spend even more time improving it in the future. I felt that the guidance for JavaFX given in class was sufficient to jump start my coding process, and the TAs were sufficiently knowledgeable about JavaFX to help me with any problems. It would have been helpful if we were given a more complex example code file to build off of, because I feel that it didn't really use the best coding standards that are expected of us for this project.
+Battle mode
+------------------
+Each opponent begins with a set amount of health points (HP) according to their Pokémon's strength. Pressing the Z key repeatedly deals damage to the opponent's Pokémon, but attacks are dealt to the player's Pokémon on a timed basis.

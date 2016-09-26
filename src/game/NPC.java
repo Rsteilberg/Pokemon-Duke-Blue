@@ -1,4 +1,4 @@
-package game_rhs16;
+package game;
 
 import java.util.HashMap;
 
@@ -16,10 +16,14 @@ public class NPC {
 	/**
 	 * Initialize variables for NPC
 	 * 
-	 * @param idNumber the id of the NPC
-	 * @param x the horizontal position of the NPC
-	 * @param y the vertical position of the NPC
-	 * @param s the stage
+	 * @param idNumber
+	 *            the id of the NPC
+	 * @param x
+	 *            the horizontal position of the NPC
+	 * @param y
+	 *            the vertical position of the NPC
+	 * @param s
+	 *            the stage
 	 */
 	public NPC(int idNumber, double x, double y, String s) {
 		id = idNumber;
@@ -27,9 +31,10 @@ public class NPC {
 		posY = y;
 		text = s;
 	}
-	
+
 	/**
 	 * Get the NPC's ID
+	 * 
 	 * @return the NPC's int ID
 	 */
 	public int getID() {
@@ -38,19 +43,24 @@ public class NPC {
 
 	/**
 	 * Get the NPC's text
+	 * 
 	 * @return the NPC's String text
 	 */
 	public String getText() {
 		return text;
 	}
-	
+
 	/**
 	 * Determine if NPC is being engaged by the player's sprite
 	 * 
-	 * @param id the id of the NPC
-	 * @param NPCs map of all NPCs and their associated data
-	 * @param x the horizontal position of the player's sprite
-	 * @param y the vertical position of the player's sprite
+	 * @param id
+	 *            the id of the NPC
+	 * @param NPCs
+	 *            the map of all NPCs and their associated data
+	 * @param x
+	 *            the horizontal position of the player's sprite
+	 * @param y
+	 *            the vertical position of the player's sprite
 	 * @return id of NPC if engaged, 0 otherwise
 	 */
 	public int isEngaged(int id, HashMap<Integer, NPC> NPCs, double x, double y) {

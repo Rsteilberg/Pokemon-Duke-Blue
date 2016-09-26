@@ -1,4 +1,4 @@
-package game_rhs16;
+package game;
 
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -9,7 +9,7 @@ import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 
 /**
- * Initialize intro scene and provide segways into other game modes
+ * Initialize intro scene and provide segues into other game modes
  * 
  * @author Robert H. Steilberg II
  */
@@ -54,8 +54,10 @@ public class Intro {
 	/**
 	 * Initialize intro stage
 	 * 
-	 * @param width the width of the window
-	 * @param height the height of the window
+	 * @param width
+	 *            the width of the window
+	 * @param height
+	 *            the height of the window
 	 * @return the scene
 	 */
 	public Scene init(int width, int height) {

@@ -1,4 +1,4 @@
-package game_rhs16;
+package game;
 
 import java.io.File;
 import javafx.animation.KeyFrame;
@@ -30,7 +30,8 @@ public class Main extends Application {
 	/**
 	 * Play a specified music file
 	 * 
-	 * @param filename the name of the music file to play
+	 * @param filename
+	 *            the name of the music file to play
 	 */
 	private void playMusic(String filename) {
 		String musicFile = "music/" + filename;
@@ -38,11 +39,12 @@ public class Main extends Application {
 		myMediaPlayer = new MediaPlayer(sound);
 		myMediaPlayer.play();
 	}
-	
+
 	/**
 	 * Set the cheat instruction panel
 	 * 
-	 * @param s the stage
+	 * @param s
+	 *            the stage
 	 */
 	private void setCheatScene(Stage s) {
 		myCheat = new Cheat();
@@ -55,9 +57,10 @@ public class Main extends Application {
 	}
 
 	/**
-	 * Set the scene for RPG gameplay
+	 * Set the scene for overworld gameplay
 	 * 
-	 * @param s the stage
+	 * @param s
+	 *            the stage
 	 */
 	private void setGameScene(Stage s) {
 		myGame = new Game(s);
@@ -75,8 +78,10 @@ public class Main extends Application {
 	/**
 	 * Handle user input to the keyboard
 	 * 
-	 * @param e the user's input event
-	 * @param s the stage
+	 * @param e
+	 *            the user's input event
+	 * @param s
+	 *            the stage
 	 */
 	private void handleInput(KeyEvent e, Stage s) {
 		String input = "";

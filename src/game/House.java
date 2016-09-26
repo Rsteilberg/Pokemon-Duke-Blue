@@ -1,4 +1,4 @@
-package game_rhs16;
+package game;
 
 /**
  * Store data for possible obstructions in the game's world mode
@@ -14,10 +14,14 @@ public class House {
 	/**
 	 * Initialize variables for Battle
 	 * 
-	 * @param top y value of top edge of house
-	 * @param bottom y value of bottom edge of house
-	 * @param left x value of left edge of house
-	 * @param right x value of right edge of house
+	 * @param top
+	 *            the y value of object's top edge
+	 * @param bottom
+	 *            the y value of object's bottom edge
+	 * @param left
+	 *            the x value of object's left edge
+	 * @param right
+	 *            the x value of object's right edge
 	 */
 	public House(double top, double bottom, double left, double right) {
 		topEdge = top;
@@ -29,9 +33,12 @@ public class House {
 	/**
 	 * Determine if a house is obstructing a sprite
 	 * 
-	 * @param dir direction in which the sprite is pointed
-	 * @param x horizontal location of sprite
-	 * @param y vertical location of sprite
+	 * @param dir
+	 *            the direction in which the sprite is pointed
+	 * @param x
+	 *            the horizontal location of sprite
+	 * @param y
+	 *            the vertical location of sprite
 	 * @return true if house obstructs player, false otherwise
 	 */
 	public boolean isObstruction(int dir, double x, double y) {

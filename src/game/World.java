@@ -1,7 +1,8 @@
-package game_rhs16;
+package game;
 
 /**
- * Store data for extremities (i.e. edge of navigable world) in the game's world mode
+ * Store data for map extremities (i.e. edge of navigable world) in the game's
+ * overworld mode
  * 
  * @author Robert H. Steilberg II
  */
@@ -14,10 +15,14 @@ public class World {
 	/**
 	 * Initialize variables for World
 	 * 
-	 * @param top the y position of the top extremity
-	 * @param bottom the y position of the bottom extremity
-	 * @param left the x position of the left extremity
-	 * @param right the x position of the right extremity
+	 * @param top
+	 *            the y position of the top extremity
+	 * @param bottom
+	 *            the y position of the bottom extremity
+	 * @param left
+	 *            the x position of the left extremity
+	 * @param right
+	 *            the x position of the right extremity
 	 */
 	public World(double top, double bottom, double left, double right) {
 		topEdge = top;
@@ -29,9 +34,12 @@ public class World {
 	/**
 	 * Determine if the player is obstructed by one of the world's extremities
 	 * 
-	 * @param dir the direction of the player
-	 * @param x the horizontal position of the player
-	 * @param y the vertical position of the player
+	 * @param dir
+	 *            the direction of the player
+	 * @param x
+	 *            the horizontal position of the player
+	 * @param y
+	 *            the vertical position of the player
 	 * @return true if the player is obstructed, false otherwise
 	 */
 	public boolean isObstruction(int dir, double x, double y) {

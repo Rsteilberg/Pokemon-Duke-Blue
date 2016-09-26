@@ -1,4 +1,4 @@
-package game_rhs16;
+package game;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -19,7 +19,9 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 /**
- * Handle game engine and overall gameplay with scenes, images, music, input, etc.
+ * Handle game engine and overall gameplay with scenes, images, music, input,
+ * etc.
+ * 
  * Dependencies: Battle.java, House.java, NPC.java, World.java
  * 
  * @author Robert H. Steilberg II
@@ -50,7 +52,8 @@ class Game {
 	/**
 	 * Initialize variables for Game
 	 * 
-	 * @param s the stage
+	 * @param s
+	 *            the stage
 	 */
 	public Game(Stage s) {
 		myStage = s;
@@ -78,7 +81,8 @@ class Game {
 	/**
 	 * Play a specified music file
 	 * 
-	 * @param filename the name of the music file to play
+	 * @param filename
+	 *            the name of the music file to play
 	 */
 	private void playMusic(String filename) {
 		String musicFile = "music/" + filename;
@@ -88,7 +92,7 @@ class Game {
 	}
 
 	/**
-	 * Store id, position, and lines respective to each NPC
+	 * Store id, position, and text lines respective to each NPC
 	 */
 	private void createNPCs() {
 		myNPCs = new HashMap<Integer, NPC>();
@@ -126,16 +130,20 @@ class Game {
 	/**
 	 * Create the user sprite and place in the middle of the stage
 	 * 
-	 * @param width the width of the stage
-	 * @param height the height of the stage
+	 * @param width
+	 *            the width of the stage
+	 * @param height
+	 *            the height of the stage
 	 */
 	private void createPlayer() {
 		Image rawSprite = new Image(getClass().getClassLoader().getResourceAsStream("player.png"));
 		PixelReader reader = rawSprite.getPixelReader();
 		WritableImage player = new WritableImage(reader, 0, 6, 30, 40);
 		mySprite = new ImageView(player);
-		mySprite.setX(myStageSize / 2 - mySprite.getBoundsInLocal().getWidth() / 2);   // put in the middle horizontally
-		mySprite.setY(myStageSize / 2 - mySprite.getBoundsInLocal().getHeight() / 2);  // put in the middle vertically
+		// place sprite in the middle horizontally
+		mySprite.setX(myStageSize / 2 - mySprite.getBoundsInLocal().getWidth() / 2);
+		// place sprite in the middle vertically
+		mySprite.setY(myStageSize / 2 - mySprite.getBoundsInLocal().getHeight() / 2);
 	}
 
 	/**
@@ -147,19 +155,23 @@ class Game {
 		myWorld.setFitHeight(1252);
 		myWorld.setFitWidth(1284);
 		myWorld.setPreserveRatio(true);
-		myWorld.setX(-416.0);
-		myWorld.setY(-732.0);
+		myWorld.setX(-416.0); // x position of world map relative to window
+		myWorld.setY(-732.0); // y position of world map relative to window
 		myRoot.getChildren().add(myWorld);
 		myRoot.getChildren().add(mySprite);
-		myFence = new World(-64.0, -752.0, -52.0, -784.0);  // contain sprite with fence
+		// contain player sprite within world fence
+		myFence = new World(-64.0, -752.0, -52.0, -784.0);
 	}
 
 	/**
 	 * Determine if the sprite is obstructed by something
 	 * 
-	 * @param dir the direction the sprite is pointed in
-	 * @param x the horizontal position of the map relative to the sprite
-	 * @param y the vertical position of the map relative to the sprite
+	 * @param dir
+	 *            the direction the sprite is pointed in
+	 * @param x
+	 *            the horizontal position of the map relative to the sprite
+	 * @param y
+	 *            the vertical position of the map relative to the sprite
 	 * @return true if obstructed, false otherwise
 	 */
 	private boolean obstructed(int dir, double x, double y) {
@@ -182,8 +194,10 @@ class Game {
 	/**
 	 * Determine if the sprite is engaging an NPC, and return the NPC's ID if so
 	 * 
-	 * @param x the horizontal position of the map relative to the sprite
-	 * @param y the vertical position of the map relative to the sprite
+	 * @param x
+	 *            the horizontal position of the map relative to the sprite
+	 * @param y
+	 *            the vertical position of the map relative to the sprite
 	 * @return -1 if no NPC engaged, and the NPC's ID otherwise
 	 */
 	private int isNPC(double x, double y) {
@@ -199,15 +213,18 @@ class Game {
 	/**
 	 * Change the sprite image to turn the sprite's "body"
 	 * 
-	 * @param myRoot where the nodes are
-	 * @param y crop location in sprite image
+	 * @param myRoot
+	 *            where the nodes are
+	 * @param y
+	 *            crop location in sprite image
 	 */
 	private void turnSprite(Group myRoot, int y) {
 		myRoot.getChildren().remove(mySprite);
 		Image rawSprite = new Image(getClass().getClassLoader().getResourceAsStream("player.png"));
 		PixelReader reader = rawSprite.getPixelReader();
-		WritableImage player = new WritableImage(reader, 0, y, 30, 40);  // crop the sprite image to the
-		mySprite = new ImageView(player);								 // sprite's correct orientation
+		// crop the sprite image to the sprite's correct orientation (y)
+		WritableImage player = new WritableImage(reader, 0, y, 30, 40);
+		mySprite = new ImageView(player);
 		mySprite.setX(myStageSize / 2 - mySprite.getBoundsInLocal().getWidth() / 2);
 		mySprite.setY(myStageSize / 2 - mySprite.getBoundsInLocal().getHeight() / 2);
 		myRoot.getChildren().add(mySprite);
@@ -246,11 +263,11 @@ class Game {
 		if (myInput.equals("Z")) { // check for engagement with NPC
 			myInput = "";
 			int id = isNPC(x, y);
-			if (id != -1) {        // -1 = not an NPC
+			if (id != -1) { // -1 = not an NPC
 				playClick();
 				myText.setText(myNPCs.get(id).getText());
 			}
-			if (id == 1) {         // boss battle engaged
+			if (id == 1) { // boss battle engaged
 				myBattle = new Battle(myStage);
 				Scene battleScene = myBattle.init(myStageSize, myStageSize);
 				myStage.setScene(battleScene);
@@ -262,7 +279,8 @@ class Game {
 	/**
 	 * Handle user input to the keyboard
 	 * 
-	 * @param e the user's input event
+	 * @param e
+	 *            the user's input event
 	 */
 	private void handleInput(KeyEvent e) {
 		myInput = e.getCode().toString();
@@ -271,12 +289,13 @@ class Game {
 	/**
 	 * Handle key release
 	 * 
-	 * @param e the user's input event
+	 * @param e
+	 *            the user's input event
 	 */
 	private void handleRelease(KeyEvent e) {
 		myInput = "";
 	}
-	
+
 	/**
 	 * Step through the gameplay
 	 * 
@@ -289,8 +308,10 @@ class Game {
 	/**
 	 * Initialize game stage and gameplay
 	 * 
-	 * @param width the width of the window
-	 * @param height the height of the window
+	 * @param width
+	 *            the width of the window
+	 * @param height
+	 *            the height of the window
 	 * 
 	 * @return the scene
 	 */
